@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta AI — AI Ranking 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .model-accent { color: #0082c8; }
+    .model-glow { background: linear-gradient(135deg, #0082c822, #0082c811); border: 1px solid #0082c844; }
+    .model-page-hero { background: radial-gradient(ellipse at top right, #0082c814 0%, transparent 60%); }
+    .score-ring { position: relative; width: 160px; height: 160px; }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring-value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .score-ring-num { font-family: var(--font-display); font-size: 40px; font-weight: 800; color: #0082c8; display: block; line-height: 1; }
+    .score-ring-label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+    .history-timeline { position: relative; padding-left: 32px; }
+    .history-timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-dot { position: absolute; left: -28px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #0082c8; border: 2px solid var(--bg-primary); }
+    .timeline-year { font-size: 12px; font-weight: 600; color: #0082c8; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .timeline-text { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">🦙 Meta AI</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+</div>
+<div class="cursor-glow"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="models.html" class="active">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="model-page-hero" style="padding: 140px 40px 80px; position: relative; overflow: hidden;">
+  <div class="glow-orb glow-orb-1" style="background: radial-gradient(circle, #0082c818 0%, transparent 70%);"></div>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <a href="models.html" style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 14px; text-decoration: none; margin-bottom: 40px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">
+      ← Back to All Models
+    </a>
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: start;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+          <div class="model-hero-icon" style="background: linear-gradient(135deg, #0082c833, #0082c855);">🦙</div>
+          <div>
+            <div style="font-size: 13px; color: #0082c8; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px;">META</div>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: #0082c818; border: 1px solid #0082c840; border-radius: 100px; font-size: 12px; color: #0082c8; font-weight: 600;">⭐ #1 Open Source LLM · Free</span>
+          </div>
+        </div>
+        <h1 style="font-family: var(--font-display); font-size: clamp(52px,8vw,88px); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 24px;">
+          <span style="color: var(--text-primary);">Meta AI</span>
+        </h1>
+        <p class="model-hero-subtitle">Meta's Llama-powered AI assistant available across WhatsApp, Instagram, Facebook, and Messenger. Built on the world's most popular open-source AI models, Meta AI reaches billions of users for free.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+          <a href="compare.html?a=metaai&b=claude" class="btn-primary" style="padding: 12px 28px; font-size: 15px;">Meta AI vs Claude →</a>
+          <a href="https://www.meta.ai" target="_blank" rel="noopener" class="btn-secondary" style="padding: 12px 28px; font-size: 15px;">Try Meta AI ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="score-ring">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#0082c8" stroke-width="8" stroke-dasharray="439.8" stroke-dashoffset="97" stroke-linecap="round" style="transition: stroke-dashoffset 2s ease;"/>
+          </svg>
+          <div class="score-ring-value">
+            <span class="score-ring-num" data-count="78">0</span>
+            <span class="score-ring-label">OVERALL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model-stats-grid" style="margin-top: 48px;">
+      
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Context Window</div>
+        <div class="model-stat-value" style="color: #0082c8;">128K tokens</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Free to Use</div>
+        <div class="model-stat-value" style="color: #0082c8;">Yes</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Platform Reach</div>
+        <div class="model-stat-value" style="color: #0082c8;">3B+ users</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Writing Score</div>
+        <div class="model-stat-value" style="color: #0082c8;">80 / 100</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+    <div class="fade-up">
+      <h2 style="font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 8px;">Performance Scores</h2>
+      <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 32px;">Scores across all evaluated categories</p>
+      
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">💻 Coding</span><span class="progress-bar-value">78</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 78%; background: linear-gradient(90deg, #0082c8, #0082c888);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎯 Reasoning</span><span class="progress-bar-value">76</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 76%; background: linear-gradient(90deg, #0082c8, #0082c888);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">✍️ Writing</span><span class="progress-bar-value">80</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 80%; background: linear-gradient(90deg, #0082c8, #0082c888);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🔬 Research</span><span class="progress-bar-value">74</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 74%; background: linear-gradient(90deg, #0082c8, #0082c888);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🌐 Accessibility</span><span class="progress-bar-value">100</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 100%; background: linear-gradient(90deg, #0082c8, #0082c888);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🆓 Free Access</span><span class="progress-bar-value">100</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 100%; background: linear-gradient(90deg, #0082c8, #0082c888);"></div></div>
+      </div>
+    </div>
+    <div class="fade-up stagger-2">
+      <div class="sw-card strengths" style="margin-bottom: 20px;">
+        <h3>✅ Strengths</h3>
+        <ul><li>Completely free with no subscription</li><li>Available in WhatsApp, Instagram, Facebook</li><li>Llama models fully open-source</li><li>Massive community and developer adoption</li><li>Image generation with Imagine</li><li>3 billion+ potential users via Meta apps</li></ul>
+      </div>
+      <div class="sw-card weaknesses">
+        <h3>⚠️ Weaknesses</h3>
+        <ul><li>Lower quality ceiling vs GPT-4/Claude</li><li>Privacy concerns with Meta data use</li><li>Weaker at complex reasoning tasks</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">History</span>
+    <h2 class="section-title">Meta AI's Journey</h2>
+  </div>
+  <div class="history-timeline fade-up" style="max-width: 700px; margin: 0 auto;">
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">FEBRUARY 2023</div>
+      <div class="timeline-text">LLaMA 1 released as research paper then leaked. Becomes foundation for hundreds of fine-tuned models.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">JULY 2023</div>
+      <div class="timeline-text">Llama 2 officially open-sourced for commercial use. Changes the open-source AI landscape permanently.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">APRIL 2024</div>
+      <div class="timeline-text">Meta AI assistant launches across WhatsApp, Instagram, Facebook, and Messenger. Powered by Llama 3.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">JULY 2024</div>
+      <div class="timeline-text">Llama 3.1 405B releases — largest open-source model ever. Claims to match GPT-4o on benchmarks.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">SEPTEMBER 2024</div>
+      <div class="timeline-text">Meta AI adds real-time web search and Imagine image generation across all platforms.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2025–2026</div>
+      <div class="timeline-text">Llama 4 Scout and Maverick launch with 10M token context. Meta commits $60B+ to AI infrastructure.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Benchmarks</span>
+    <h2 class="section-title">Benchmark Scores</h2>
+  </div>
+  <div class="benchmark-table-wrap fade-up">
+    <table class="benchmark-table">
+      <thead>
+        <tr><th>Benchmark</th><th>Meta AI Score</th><th>Top Competitor</th><th>Rank</th><th>Category</th></tr>
+      </thead>
+      <tbody>
+        
+      <tr>
+        <td>Open Source Rank</td>
+        <td><span class="score-pill excellent">99.0</span></td>
+        <td>N/A</td>
+        <td>🥇 #1</td>
+        <td>Openness</td>
+      </tr>
+      <tr>
+        <td>MMLU (Knowledge)</td>
+        <td><span class="score-pill excellent">76.0</span></td>
+        <td>92.0</td>
+        <td>🥉 #5</td>
+        <td>Reasoning</td>
+      </tr>
+      <tr>
+        <td>HumanEval (Coding)</td>
+        <td><span class="score-pill excellent">78.0</span></td>
+        <td>96.4</td>
+        <td>🥉 #5</td>
+        <td>Coding</td>
+      </tr>
+      <tr>
+        <td>Platform Reach</td>
+        <td><span class="score-pill excellent">100.0</span></td>
+        <td>70.0</td>
+        <td>🥇 #1</td>
+        <td>Accessibility</td>
+      </tr>
+      <tr>
+        <td>Cost (Free Tier)</td>
+        <td><span class="score-pill excellent">100.0</span></td>
+        <td>80.0</td>
+        <td>🥇 #1</td>
+        <td>Value</td>
+      </tr>
+      <tr>
+        <td>Community Adoption</td>
+        <td><span class="score-pill excellent">98.0</span></td>
+        <td>80.0</td>
+        <td>🥇 #1</td>
+        <td>Ecosystem</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="text-align: center;">
+  <h2 class="section-title fade-up">Ready to Compare Meta AI?</h2>
+  <p class="section-subtitle fade-up" style="margin-bottom: 40px;">See how Meta AI stacks up against the competition</p>
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;" class="fade-up">
+    <a href="compare.html?a=metaai&b=claude" class="btn-primary">Meta AI vs Claude →</a>
+    <a href="compare.html?a=metaai&b=chatgpt" class="btn-secondary">Meta AI vs ChatGPT →</a>
+    <a href="models.html" class="btn-secondary">All Models →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:8px;"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+      <p>The definitive source for AI model rankings, benchmarks, and comparisons.</p>
+    </div>
+    <div class="footer-col"><h4>AI Rankings</h4><ul><li><a href="rankings.html">Overall Rankings</a></li><li><a href="categories.html">All Categories</a></li><li><a href="benchmarks.html">Benchmarks</a></li></ul></div>
+    <div class="footer-col"><h4>Top Models</h4><ul><li><a href="claude.html">Claude</a></li><li><a href="chatgpt.html">ChatGPT</a></li><li><a href="gemini.html">Gemini</a></li><li><a href="models.html">All Models</a></li></ul></div>
+    <div class="footer-col"><h4>Tools</h4><ul><li><a href="compare.html">Compare</a></li><li><a href="about.html">About</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ultimate AI Ranking.</span><span>Rankings updated June 2026</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

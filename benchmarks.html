@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benchmarks — AI Ranking 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .bench-hero { background: linear-gradient(180deg, rgba(79,143,255,0.06) 0%, transparent 80%); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 48px; margin-bottom: 48px; }
+    .bench-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+    .bench-meta-item { padding: 10px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-secondary); }
+    .bench-meta-item strong { color: var(--text-primary); display: block; font-size: 16px; margin-bottom: 2px; }
+    .bench-section-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); display: flex; align-items: center; gap: 10px; }
+    .bench-section-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+    .bench-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 16px; overflow: hidden; }
+    .bench-header { padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+    .bench-header:hover { background: rgba(255,255,255,0.02); }
+    .bench-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; }
+    .bench-tag { padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.3px; }
+    .bench-tag.coding { background: rgba(79,143,255,0.15); color: var(--accent-blue); }
+    .bench-tag.reasoning { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+    .bench-tag.math { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+    .bench-tag.writing { background: rgba(244,114,182,0.15); color: var(--accent-pink); }
+    .bench-body { padding: 0 28px 24px; display: none; }
+    .bench-body.open { display: block; }
+    .bench-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+    .bench-scores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .bench-score-item { background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); padding: 14px; text-align: center; }
+    .bench-score-val { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--accent-blue); }
+    .bench-score-model { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .bench-toggle-icon { font-size: 18px; color: var(--text-muted); transition: transform 0.2s; }
+    .bench-header.open .bench-toggle-icon { transform: rotate(180deg); }
+    .overall-table { width: 100%; border-collapse: collapse; }
+    .overall-table th { padding: 14px 20px; background: rgba(255,255,255,0.03); font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-muted); text-align: left; border-bottom: 1px solid var(--border); }
+    .overall-table td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .overall-table tr:last-child td { border-bottom: none; }
+    .overall-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .overall-table a { color: var(--text-primary); text-decoration: none; font-weight: 600; }
+    .overall-table a:hover { color: var(--accent-blue); }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">⬡ Benchmarks</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+</div>
+<div class="cursor-glow"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="models.html">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html" class="active">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<section style="padding: 140px 40px 80px; max-width: 1100px; margin: 0 auto;">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Methodology</span>
+    <h1 class="section-title">Benchmark Suite 2026</h1>
+    <p class="section-subtitle">We run 5,000+ tests across 15 standardized benchmarks to produce our scores</p>
+  </div>
+
+  <div class="bench-hero fade-up">
+    <h2 style="font-family:var(--font-display);font-size:24px;font-weight:700;margin-bottom:8px;">How We Score</h2>
+    <p style="color:var(--text-secondary);font-size:15px;line-height:1.7;">Our rankings combine human preference evaluations (40%), standardized automated benchmarks (40%), and real-world task performance (20%). Scores are normalized to a 0–100 scale for each category. We update scores monthly as new model versions are released.</p>
+    <div class="bench-meta">
+      <div class="bench-meta-item"><strong>5,000+</strong>Total Tests</div>
+      <div class="bench-meta-item"><strong>15</strong>Benchmarks</div>
+      <div class="bench-meta-item"><strong>500+</strong>Human Evaluators</div>
+      <div class="bench-meta-item"><strong>Monthly</strong>Update Frequency</div>
+      <div class="bench-meta-item"><strong>12</strong>Models Tested</div>
+    </div>
+  </div>
+
+  <!-- Coding Benchmarks -->
+  <div class="fade-up" style="margin-bottom:48px;">
+    <div class="bench-section-title">💻 Coding Benchmarks</div>
+    <div class="bench-section-desc">Tests that measure a model's ability to write, understand, and debug code</div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">HumanEval</div><span class="bench-tag coding">Coding</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">HumanEval consists of 164 hand-written Python programming problems. Models must produce a correct function implementation given a docstring. Pass@1 rate is the primary metric — the percentage of problems solved on the first attempt.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#cd8934">96.4</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">92.1</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#10b981">88.3</div><div class="bench-score-model">🌊 DeepSeek</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">86.0</div><div class="bench-score-model">✨ Gemini</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">82.0</div><div class="bench-score-model">🪟 Copilot</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">SWE-bench Verified</div><span class="bench-tag coding">Coding</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">SWE-bench tests AI on real GitHub issues from popular Python repositories. Models must analyze a bug report, understand the codebase, and produce a correct patch. This is considered the hardest real-world coding benchmark.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#cd8934">49.0%</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">38.0%</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">31.0%</div><div class="bench-score-model">✨ Gemini</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">28.0%</div><div class="bench-score-model">🌊 DeepSeek</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">WebDev Arena</div><span class="bench-tag coding">Web Dev</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">WebDev Arena evaluates AI on generating full web pages, React components, and UI designs from natural language descriptions. Human judges rate output on visual accuracy, responsiveness, and code quality.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#cd8934">96.0</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">91.0</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">88.0</div><div class="bench-score-model">🪟 Copilot</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">84.0</div><div class="bench-score-model">✨ Gemini</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reasoning Benchmarks -->
+  <div class="fade-up" style="margin-bottom:48px;">
+    <div class="bench-section-title">🎯 Reasoning Benchmarks</div>
+    <div class="bench-section-desc">Tests measuring logical deduction, scientific reasoning, and common sense</div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">MMLU</div><span class="bench-tag reasoning">Reasoning</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">Massive Multitask Language Understanding — 57 subjects spanning STEM, humanities, social sciences, and more. 14,000 multiple-choice questions at high school to PhD level difficulty.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#cd8934">92.0</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">90.1</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">87.0</div><div class="bench-score-model">✨ Gemini</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">84.0</div><div class="bench-score-model">🌊 DeepSeek</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">80.0</div><div class="bench-score-model">⚡ Grok</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">GPQA Diamond</div><span class="bench-tag reasoning">Reasoning</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">Graduate-Level Google-Proof Q&A — expert-level questions in biology, physics, and chemistry that even PhD domain experts answer correctly only ~65% of the time. Designed to be impossible to Google.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#cd8934">78.0</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">72.0</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">68.0</div><div class="bench-score-model">✨ Gemini</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">61.0</div><div class="bench-score-model">🌊 DeepSeek</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">ARC-AGI</div><span class="bench-tag reasoning">Reasoning</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">Abstraction and Reasoning Corpus — visual pattern recognition tasks that require fluid intelligence. Designed by François Chollet to test true reasoning beyond memorization. Humans score ~84% on average.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#cd8934">86.0</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">82.0</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">77.0</div><div class="bench-score-model">✨ Gemini</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">72.0</div><div class="bench-score-model">⚡ Grok</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Math Benchmarks -->
+  <div class="fade-up" style="margin-bottom:48px;">
+    <div class="bench-section-title">🔢 Mathematics Benchmarks</div>
+    <div class="bench-section-desc">From grade school arithmetic to olympiad-level proofs</div>
+
+    <div class="bench-card">
+      <div class="bench-header" onclick="toggleBench(this)">
+        <div style="display:flex;align-items:center;gap:12px;"><div class="bench-name">MATH (Competition)</div><span class="bench-tag math">Math</span></div>
+        <span class="bench-toggle-icon">▼</span>
+      </div>
+      <div class="bench-body">
+        <p class="bench-desc">12,500 competition-level math problems across algebra, geometry, number theory, and calculus. Problems are sourced from AMC, AIME, and other math olympiad competitions. Both final answer and step-by-step reasoning are scored.</p>
+        <div class="bench-scores-grid">
+          <div class="bench-score-item"><div class="bench-score-val" style="color:#10a37f">93.1</div><div class="bench-score-model">🤖 ChatGPT</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">91.5</div><div class="bench-score-model">🧠 Claude</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">90.2</div><div class="bench-score-model">🌊 DeepSeek</div></div>
+          <div class="bench-score-item"><div class="bench-score-val">88.0</div><div class="bench-score-model">✨ Gemini</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overall Comparison Table -->
+  <div class="fade-up">
+    <div class="bench-section-title">📊 Full Benchmark Comparison</div>
+    <div class="bench-section-desc">All models across all key benchmarks (click a model to view its full profile)</div>
+    <div class="benchmark-table-wrap">
+      <table class="overall-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>HumanEval</th>
+            <th>MMLU</th>
+            <th>GPQA</th>
+            <th>MATH</th>
+            <th>ARC-AGI</th>
+            <th>WebDev</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="claude.html">🧠 Claude</a></td><td><span class="score-pill excellent">96.4</span></td><td><span class="score-pill excellent">92.0</span></td><td><span class="score-pill great">78.0</span></td><td><span class="score-pill excellent">91.5</span></td><td><span class="score-pill great">86.0</span></td><td><span class="score-pill excellent">96.0</span></td></tr>
+          <tr><td><a href="chatgpt.html">🤖 ChatGPT</a></td><td><span class="score-pill excellent">92.1</span></td><td><span class="score-pill excellent">90.1</span></td><td><span class="score-pill good">72.0</span></td><td><span class="score-pill excellent">93.1</span></td><td><span class="score-pill great">82.0</span></td><td><span class="score-pill excellent">91.0</span></td></tr>
+          <tr><td><a href="gemini.html">✨ Gemini</a></td><td><span class="score-pill great">86.0</span></td><td><span class="score-pill great">87.0</span></td><td><span class="score-pill good">68.0</span></td><td><span class="score-pill great">88.0</span></td><td><span class="score-pill good">77.0</span></td><td><span class="score-pill great">84.0</span></td></tr>
+          <tr><td><a href="deepseek.html">🌊 DeepSeek</a></td><td><span class="score-pill great">88.3</span></td><td><span class="score-pill great">84.0</span></td><td><span class="score-pill good">61.0</span></td><td><span class="score-pill excellent">90.2</span></td><td><span class="score-pill average">72.0</span></td><td><span class="score-pill great">80.0</span></td></tr>
+          <tr><td><a href="grok.html">⚡ Grok</a></td><td><span class="score-pill good">78.0</span></td><td><span class="score-pill good">80.0</span></td><td><span class="score-pill average">58.0</span></td><td><span class="score-pill good">76.0</span></td><td><span class="score-pill average">72.0</span></td><td><span class="score-pill good">74.0</span></td></tr>
+          <tr><td><a href="copilot.html">🪟 Copilot</a></td><td><span class="score-pill great">82.0</span></td><td><span class="score-pill good">78.0</span></td><td><span class="score-pill average">55.0</span></td><td><span class="score-pill good">74.0</span></td><td><span class="score-pill average">68.0</span></td><td><span class="score-pill great">88.0</span></td></tr>
+          <tr><td><a href="perplexity.html">🔍 Perplexity</a></td><td><span class="score-pill average">68.0</span></td><td><span class="score-pill good">76.0</span></td><td><span class="score-pill average">52.0</span></td><td><span class="score-pill average">62.0</span></td><td><span class="score-pill average">60.0</span></td><td><span class="score-pill average">65.0</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:8px;"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+      <p>Rigorous benchmarks. Honest rankings.</p>
+    </div>
+    <div class="footer-col"><h4>Rankings</h4><ul><li><a href="rankings.html">Overall</a></li><li><a href="categories.html">Categories</a></li></ul></div>
+    <div class="footer-col"><h4>Tools</h4><ul><li><a href="compare.html">Compare</a></li><li><a href="about.html">About</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ultimate AI Ranking.</span><span>5,000+ tests run</span></div>
+</footer>
+<script src="script.js"></script>
+<script>
+function toggleBench(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  header.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>

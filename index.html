@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate AI Ranking 2026 — The World's Best AI Systems</title>
+  <meta name="description" content="The definitive global ranking of the world's most advanced artificial intelligence systems. Compare ChatGPT, Claude, Gemini, Grok, and more.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">⬡ AI Ranking</div>
+  <div class="loading-bar-track">
+    <div class="loading-bar-fill"></div>
+  </div>
+</div>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow"></div>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">⬡</div>
+    AI Ranking
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="models.html">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <canvas id="particle-canvas" class="hero-canvas"></canvas>
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Updated June 2026 · 12 Models Ranked
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line1">Ultimate AI</span>
+      <span class="line2">Ranking 2026</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      The most comprehensive and advanced comparison of the world's best
+      artificial intelligence systems — ranked across 10 categories.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary" data-scroll-to="rankings">
+        Explore Rankings
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a href="compare.html" class="btn-secondary">
+        Compare Models
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="12">0</span>
+        <span class="hero-stat-label">AI Models</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="10">0</span>
+        <span class="hero-stat-label">Categories</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="5000">0</span>
+        <span class="hero-stat-label">Benchmark Tests</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="2026">0</span>
+        <span class="hero-stat-label">Year Edition</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Top Models Strip -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Top Performers</span>
+    <h2 class="section-title">Leading the AI Revolution</h2>
+    <p class="section-subtitle">These models consistently dominate across the most demanding benchmarks</p>
+  </div>
+
+  <div class="top-model-strip">
+    <div class="top-model-card fade-up stagger-1">
+      <span class="top-medal">🥇</span>
+      <div class="top-model-name">Claude</div>
+      <div class="top-model-cat">Best for Coding & Reasoning</div>
+    </div>
+    <div class="top-model-card fade-up stagger-2">
+      <span class="top-medal">🥇</span>
+      <div class="top-model-name">ChatGPT</div>
+      <div class="top-model-cat">Best for Creativity & Math</div>
+    </div>
+    <div class="top-model-card fade-up stagger-3">
+      <span class="top-medal">🥇</span>
+      <div class="top-model-name">Perplexity</div>
+      <div class="top-model-cat">Best for Research</div>
+    </div>
+  </div>
+
+  <div class="stats-strip fade-up">
+    <div class="stat-block">
+      <div class="stat-block-num" data-count="96">0</div>
+      <div class="stat-block-label">Claude Coding Score</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-block-num" data-count="97">0</div>
+      <div class="stat-block-label">Perplexity Research Score</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-block-num" data-count="98">0</div>
+      <div class="stat-block-label">Midjourney Creativity Score</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-block-num" data-count="96">0</div>
+      <div class="stat-block-label">Grok Speed Score</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AI Models Grid -->
+<section class="section" id="models">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">All Models</span>
+    <h2 class="section-title">World's Best AI Systems</h2>
+    <p class="section-subtitle">Click any model to explore detailed benchmarks, history, and scores</p>
+  </div>
+
+  <div class="models-grid">
+    <!-- ChatGPT -->
+    <a href="chatgpt.html" class="model-card" data-model="chatgpt">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #10a37f22, #10a37f44);">🤖</div>
+      <div class="model-name">ChatGPT</div>
+      <div class="model-maker">by OpenAI</div>
+      <div class="model-desc">The world's most popular AI assistant. Excels at creative tasks, coding, and nuanced conversation.</div>
+      <div class="model-tags">
+        <span class="tag">Coding</span>
+        <span class="tag">Writing</span>
+        <span class="tag">Math</span>
+        <span class="tag">Creativity</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">92.3</span>
+        <span class="model-rank-badge">⭐ #2 Overall</span>
+      </div>
+    </a>
+
+    <!-- Claude -->
+    <a href="claude.html" class="model-card" data-model="claude">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #cd893422, #cd893444);">🧠</div>
+      <div class="model-name">Claude</div>
+      <div class="model-maker">by Anthropic</div>
+      <div class="model-desc">Anthropic's flagship model. Dominates coding, reasoning, and safety benchmarks with unmatched precision.</div>
+      <div class="model-tags">
+        <span class="tag">Coding</span>
+        <span class="tag">Reasoning</span>
+        <span class="tag">Safety</span>
+        <span class="tag">Analysis</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">95.1</span>
+        <span class="model-rank-badge">⭐ #1 Coding</span>
+      </div>
+    </a>
+
+    <!-- Gemini -->
+    <a href="gemini.html" class="model-card" data-model="gemini">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #4285f422, #ea433544);">✨</div>
+      <div class="model-name">Gemini</div>
+      <div class="model-maker">by Google DeepMind</div>
+      <div class="model-desc">Google's multimodal powerhouse. Dominates writing and offers deep integration with Google services.</div>
+      <div class="model-tags">
+        <span class="tag">Writing</span>
+        <span class="tag">Multimodal</span>
+        <span class="tag">Speed</span>
+        <span class="tag">Search</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">87.8</span>
+        <span class="model-rank-badge">⭐ #1 Writing</span>
+      </div>
+    </a>
+
+    <!-- Grok -->
+    <a href="grok.html" class="model-card" data-model="grok">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #ffffff11, #ffffff22);">⚡</div>
+      <div class="model-name">Grok</div>
+      <div class="model-maker">by xAI</div>
+      <div class="model-desc">Elon Musk's AI. Blazingly fast with real-time X integration and irreverent personality.</div>
+      <div class="model-tags">
+        <span class="tag">Speed</span>
+        <span class="tag">Real-time</span>
+        <span class="tag">Humor</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">82.1</span>
+        <span class="model-rank-badge">⭐ #1 Speed</span>
+      </div>
+    </a>
+
+    <!-- Perplexity -->
+    <a href="perplexity.html" class="model-card" data-model="perplexity">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #20b2aa22, #20b2aa44);">🔍</div>
+      <div class="model-name">Perplexity</div>
+      <div class="model-maker">by Perplexity AI</div>
+      <div class="model-desc">The AI-powered search engine that cites its sources. Unmatched at research and fact-finding tasks.</div>
+      <div class="model-tags">
+        <span class="tag">Research</span>
+        <span class="tag">Citations</span>
+        <span class="tag">Real-time</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">80.5</span>
+        <span class="model-rank-badge">⭐ #1 Research</span>
+      </div>
+    </a>
+
+    <!-- DeepSeek -->
+    <a href="deepseek.html" class="model-card" data-model="deepseek">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #6366f122, #6366f144);">🌊</div>
+      <div class="model-name">DeepSeek</div>
+      <div class="model-maker">by DeepSeek AI</div>
+      <div class="model-desc">China's leading AI model. Exceptional at coding and math, available as open source.</div>
+      <div class="model-tags">
+        <span class="tag">Open Source</span>
+        <span class="tag">Coding</span>
+        <span class="tag">Math</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">80.0</span>
+        <span class="model-rank-badge">#5 Coding</span>
+      </div>
+    </a>
+
+    <!-- Midjourney -->
+    <a href="midjourney.html" class="model-card" data-model="midjourney">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #f59e0b22, #f59e0b44);">🎨</div>
+      <div class="model-name">Midjourney</div>
+      <div class="model-maker">by Midjourney Inc.</div>
+      <div class="model-desc">The gold standard of AI image generation. Creates stunning, photorealistic and artistic visuals.</div>
+      <div class="model-tags">
+        <span class="tag">Images</span>
+        <span class="tag">Art</span>
+        <span class="tag">Photorealism</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">98.0</span>
+        <span class="model-rank-badge">⭐ #1 Images</span>
+      </div>
+    </a>
+
+    <!-- Runway -->
+    <a href="runway.html" class="model-card" data-model="runway">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #ef444422, #ef444444);">🎬</div>
+      <div class="model-name">Runway AI</div>
+      <div class="model-maker">by Runway</div>
+      <div class="model-desc">The future of video generation. Create cinema-quality AI video from text prompts.</div>
+      <div class="model-tags">
+        <span class="tag">Video</span>
+        <span class="tag">Generation</span>
+        <span class="tag">Cinema</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">96.0</span>
+        <span class="model-rank-badge">⭐ #1 Video</span>
+      </div>
+    </a>
+
+    <!-- Copilot -->
+    <a href="copilot.html" class="model-card" data-model="copilot">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #0078d422, #0078d444);">🪟</div>
+      <div class="model-name">Copilot</div>
+      <div class="model-maker">by Microsoft</div>
+      <div class="model-desc">Microsoft's AI companion. Deeply integrated into Windows, Office 365, and the entire Microsoft ecosystem.</div>
+      <div class="model-tags">
+        <span class="tag">Office</span>
+        <span class="tag">Coding</span>
+        <span class="tag">Productivity</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">81.5</span>
+        <span class="model-rank-badge">#3 Coding</span>
+      </div>
+    </a>
+
+    <!-- Meta AI -->
+    <a href="metaai.html" class="model-card" data-model="metaai">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #0082c822, #0082c844);">🦙</div>
+      <div class="model-name">Meta AI</div>
+      <div class="model-maker">by Meta</div>
+      <div class="model-desc">Powered by Llama. Meta's open-source bet on AI, integrated across Facebook, Instagram, and WhatsApp.</div>
+      <div class="model-tags">
+        <span class="tag">Open Source</span>
+        <span class="tag">Social</span>
+        <span class="tag">Llama</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">79.2</span>
+        <span class="model-rank-badge">#4 Creativity</span>
+      </div>
+    </a>
+
+    <!-- Mistral -->
+    <a href="mistral.html" class="model-card" data-model="mistral">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #ff7f0022, #ff7f0044);">🌪️</div>
+      <div class="model-name">Mistral</div>
+      <div class="model-maker">by Mistral AI</div>
+      <div class="model-desc">Europe's champion AI model. Efficient, fast, and highly capable — especially for European languages.</div>
+      <div class="model-tags">
+        <span class="tag">European</span>
+        <span class="tag">Open Source</span>
+        <span class="tag">Efficient</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">80.8</span>
+        <span class="model-rank-badge">#2 Speed</span>
+      </div>
+    </a>
+
+    <!-- Leonardo AI -->
+    <a href="leonardo.html" class="model-card" data-model="leonardo">
+      <div class="model-card-arrow">→</div>
+      <div class="model-icon" style="background: linear-gradient(135deg, #9333ea22, #9333ea44);">🖼️</div>
+      <div class="model-name">Leonardo AI</div>
+      <div class="model-maker">by Leonardo.AI</div>
+      <div class="model-desc">Professional-grade AI image generation platform. Preferred by designers and game developers worldwide.</div>
+      <div class="model-tags">
+        <span class="tag">Images</span>
+        <span class="tag">Design</span>
+        <span class="tag">Gaming</span>
+      </div>
+      <div class="model-score-row">
+        <span class="model-score">94.0</span>
+        <span class="model-rank-badge">#2 Images</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Rankings Section -->
+<section class="section" id="rankings">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Performance Rankings</span>
+    <h2 class="section-title">AI Performance Rankings</h2>
+    <p class="section-subtitle">Ranked by human evaluations, benchmark suites, and real-world task completion</p>
+  </div>
+
+  <div class="categories-grid">
+    <!-- Website Development -->
+    <a href="categories.html#web-dev" class="category-card fade-up stagger-1">
+      <span class="category-icon">🌐</span>
+      <h3 class="category-title">Website Development</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">96</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">92</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">🪟</span><span class="rank-model-name">Copilot</span><span class="rank-score">88</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">86</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><span class="rank-model-icon">🌊</span><span class="rank-model-name">DeepSeek</span><span class="rank-score">84</span></li>
+      </ul>
+    </a>
+
+    <!-- Coding -->
+    <a href="categories.html#coding" class="category-card fade-up stagger-2">
+      <span class="category-icon">💻</span>
+      <h3 class="category-title">Coding</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">96</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">92</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">🪟</span><span class="rank-model-name">Copilot</span><span class="rank-score">88</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">86</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><span class="rank-model-icon">🌊</span><span class="rank-model-name">DeepSeek</span><span class="rank-score">88</span></li>
+      </ul>
+    </a>
+
+    <!-- Writing -->
+    <a href="categories.html#writing" class="category-card fade-up stagger-3">
+      <span class="category-icon">✍️</span>
+      <h3 class="category-title">Writing & Text Generation</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">94</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">93</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">90</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">⚡</span><span class="rank-model-name">Grok</span><span class="rank-score">82</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><span class="rank-model-icon">🔍</span><span class="rank-model-name">Perplexity</span><span class="rank-score">78</span></li>
+      </ul>
+    </a>
+
+    <!-- Research -->
+    <a href="categories.html#research" class="category-card fade-up stagger-1">
+      <span class="category-icon">🔬</span>
+      <h3 class="category-title">Research</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🔍</span><span class="rank-model-name">Perplexity</span><span class="rank-score">97</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">88</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">87</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">85</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><span class="rank-model-icon">⚡</span><span class="rank-model-name">Grok</span><span class="rank-score">80</span></li>
+      </ul>
+    </a>
+
+    <!-- Mathematics -->
+    <a href="categories.html#math" class="category-card fade-up stagger-2">
+      <span class="category-icon">🔢</span>
+      <h3 class="category-title">Mathematics</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">94</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">91</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">88</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">🌊</span><span class="rank-model-name">DeepSeek</span><span class="rank-score">90</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><span class="rank-model-icon">⚡</span><span class="rank-model-name">Grok</span><span class="rank-score">78</span></li>
+      </ul>
+    </a>
+
+    <!-- Creativity -->
+    <a href="categories.html#creativity" class="category-card fade-up stagger-3">
+      <span class="category-icon">🎭</span>
+      <h3 class="category-title">Creativity</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">95</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">88</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">82</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">🦙</span><span class="rank-model-name">Meta AI</span><span class="rank-score">81</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><span class="rank-model-icon">⚡</span><span class="rank-model-name">Grok</span><span class="rank-score">79</span></li>
+      </ul>
+    </a>
+
+    <!-- Video Generation -->
+    <a href="categories.html#video" class="category-card fade-up stagger-1">
+      <span class="category-icon">🎬</span>
+      <h3 class="category-title">Video Generation</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🎬</span><span class="rank-model-name">Runway AI</span><span class="rank-score">96</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">82</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">76</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">🦙</span><span class="rank-model-name">Meta AI</span><span class="rank-score">72</span></li>
+      </ul>
+    </a>
+
+    <!-- Image Generation -->
+    <a href="categories.html#images" class="category-card fade-up stagger-2">
+      <span class="category-icon">🖼️</span>
+      <h3 class="category-title">Image Generation</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🎨</span><span class="rank-model-name">Midjourney</span><span class="rank-score">98</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🖼️</span><span class="rank-model-name">Leonardo AI</span><span class="rank-score">94</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">86</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">80</span></li>
+      </ul>
+    </a>
+
+    <!-- Reasoning -->
+    <a href="categories.html#reasoning" class="category-card fade-up stagger-3">
+      <span class="category-icon">🎯</span>
+      <h3 class="category-title">Reasoning</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">95</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">90</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">85</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">🌊</span><span class="rank-model-name">DeepSeek</span><span class="rank-score">84</span></li>
+      </ul>
+    </a>
+
+    <!-- Speed -->
+    <a href="categories.html#speed" class="category-card fade-up stagger-1">
+      <span class="category-icon">⚡</span>
+      <h3 class="category-title">Speed</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num gold">1</span><span class="rank-model-icon">⚡</span><span class="rank-model-name">Grok</span><span class="rank-score">96</span></li>
+        <li class="rank-item"><span class="rank-num silver">2</span><span class="rank-model-icon">✨</span><span class="rank-model-name">Gemini</span><span class="rank-score">90</span></li>
+        <li class="rank-item"><span class="rank-num bronze">3</span><span class="rank-model-icon">🤖</span><span class="rank-model-name">ChatGPT</span><span class="rank-score">82</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><span class="rank-model-icon">🧠</span><span class="rank-model-name">Claude</span><span class="rank-score">78</span></li>
+      </ul>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Benchmark Comparison Table -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Benchmark Scores</span>
+    <h2 class="section-title">Head-to-Head Comparison</h2>
+    <p class="section-subtitle">Scores from standardized benchmark suites (0–100 scale)</p>
+  </div>
+
+  <div class="benchmark-table-wrap fade-up">
+    <table class="benchmark-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Coding</th>
+          <th>Reasoning</th>
+          <th>Writing</th>
+          <th>Research</th>
+          <th>Speed</th>
+          <th>Creativity</th>
+          <th>Overall</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🧠 Claude</strong></td>
+          <td><span class="score-pill excellent">96</span></td>
+          <td><span class="score-pill excellent">95</span></td>
+          <td><span class="score-pill great">90</span></td>
+          <td><span class="score-pill great">85</span></td>
+          <td><span class="score-pill good">78</span></td>
+          <td><span class="score-pill great">88</span></td>
+          <td><span class="score-pill excellent">95</span></td>
+        </tr>
+        <tr>
+          <td><strong>🤖 ChatGPT</strong></td>
+          <td><span class="score-pill excellent">92</span></td>
+          <td><span class="score-pill excellent">90</span></td>
+          <td><span class="score-pill excellent">93</span></td>
+          <td><span class="score-pill great">88</span></td>
+          <td><span class="score-pill great">82</span></td>
+          <td><span class="score-pill excellent">95</span></td>
+          <td><span class="score-pill excellent">92</span></td>
+        </tr>
+        <tr>
+          <td><strong>✨ Gemini</strong></td>
+          <td><span class="score-pill great">86</span></td>
+          <td><span class="score-pill great">85</span></td>
+          <td><span class="score-pill excellent">94</span></td>
+          <td><span class="score-pill great">87</span></td>
+          <td><span class="score-pill excellent">90</span></td>
+          <td><span class="score-pill great">82</span></td>
+          <td><span class="score-pill great">88</span></td>
+        </tr>
+        <tr>
+          <td><strong>⚡ Grok</strong></td>
+          <td><span class="score-pill good">80</span></td>
+          <td><span class="score-pill good">78</span></td>
+          <td><span class="score-pill great">82</span></td>
+          <td><span class="score-pill good">80</span></td>
+          <td><span class="score-pill excellent">96</span></td>
+          <td><span class="score-pill good">79</span></td>
+          <td><span class="score-pill great">82</span></td>
+        </tr>
+        <tr>
+          <td><strong>🔍 Perplexity</strong></td>
+          <td><span class="score-pill average">72</span></td>
+          <td><span class="score-pill good">75</span></td>
+          <td><span class="score-pill good">78</span></td>
+          <td><span class="score-pill excellent">97</span></td>
+          <td><span class="score-pill great">88</span></td>
+          <td><span class="score-pill average">70</span></td>
+          <td><span class="score-pill great">80</span></td>
+        </tr>
+        <tr>
+          <td><strong>🌊 DeepSeek</strong></td>
+          <td><span class="score-pill great">88</span></td>
+          <td><span class="score-pill great">84</span></td>
+          <td><span class="score-pill good">76</span></td>
+          <td><span class="score-pill good">78</span></td>
+          <td><span class="score-pill great">82</span></td>
+          <td><span class="score-pill good">74</span></td>
+          <td><span class="score-pill great">80</span></td>
+        </tr>
+        <tr>
+          <td><strong>🎨 Midjourney</strong></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill good">75</span></td>
+          <td><span class="score-pill excellent">98</span></td>
+          <td><span class="score-pill excellent">98</span></td>
+        </tr>
+        <tr>
+          <td><strong>🎬 Runway AI</strong></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill average">—</span></td>
+          <td><span class="score-pill good">70</span></td>
+          <td><span class="score-pill excellent">96</span></td>
+          <td><span class="score-pill excellent">96</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom: 8px; display: inline-flex;">
+        <div class="nav-logo-icon">⬡</div>
+        AI Ranking
+      </a>
+      <p>The definitive source for AI model rankings, benchmarks, and comparisons. Updated monthly.</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon" title="Twitter">𝕏</a>
+        <a href="#" class="social-icon" title="GitHub">⌥</a>
+        <a href="#" class="social-icon" title="Discord">◈</a>
+        <a href="#" class="social-icon" title="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>AI Rankings</h4>
+      <ul>
+        <li><a href="rankings.html">Overall Rankings</a></li>
+        <li><a href="categories.html#coding">Coding Rankings</a></li>
+        <li><a href="categories.html#reasoning">Reasoning Rankings</a></li>
+        <li><a href="categories.html#writing">Writing Rankings</a></li>
+        <li><a href="categories.html#images">Image Generation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Top Models</h4>
+      <ul>
+        <li><a href="claude.html">Claude</a></li>
+        <li><a href="chatgpt.html">ChatGPT</a></li>
+        <li><a href="gemini.html">Gemini</a></li>
+        <li><a href="grok.html">Grok</a></li>
+        <li><a href="midjourney.html">Midjourney</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Technology</h4>
+      <ul>
+        <li><a href="benchmarks.html">Benchmarks</a></li>
+        <li><a href="compare.html">Compare Models</a></li>
+        <li><a href="about.html#methodology">Methodology</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Future of AI</h4>
+      <ul>
+        <li><a href="about.html#future">AI Trends 2026</a></li>
+        <li><a href="benchmarks.html">New Benchmarks</a></li>
+        <li><a href="models.html">All Models</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Ultimate AI Ranking. All rights reserved.</span>
+    <span>Rankings updated June 2026 · 5,000+ benchmark tests</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

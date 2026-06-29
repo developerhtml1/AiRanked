@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo AI — AI Ranking 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .model-accent { color: #6366f1; }
+    .model-glow { background: linear-gradient(135deg, #6366f122, #6366f111); border: 1px solid #6366f144; }
+    .model-page-hero { background: radial-gradient(ellipse at top right, #6366f114 0%, transparent 60%); }
+    .score-ring { position: relative; width: 160px; height: 160px; }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring-value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .score-ring-num { font-family: var(--font-display); font-size: 40px; font-weight: 800; color: #6366f1; display: block; line-height: 1; }
+    .score-ring-label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+    .history-timeline { position: relative; padding-left: 32px; }
+    .history-timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-dot { position: absolute; left: -28px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #6366f1; border: 2px solid var(--bg-primary); }
+    .timeline-year { font-size: 12px; font-weight: 600; color: #6366f1; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .timeline-text { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">🖼️ Leonardo AI</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+</div>
+<div class="cursor-glow"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="models.html" class="active">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="model-page-hero" style="padding: 140px 40px 80px; position: relative; overflow: hidden;">
+  <div class="glow-orb glow-orb-1" style="background: radial-gradient(circle, #6366f118 0%, transparent 70%);"></div>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <a href="models.html" style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 14px; text-decoration: none; margin-bottom: 40px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">
+      ← Back to All Models
+    </a>
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: start;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+          <div class="model-hero-icon" style="background: linear-gradient(135deg, #6366f133, #6366f155);">🖼️</div>
+          <div>
+            <div style="font-size: 13px; color: #6366f1; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px;">LEONARDO.AI</div>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: #6366f118; border: 1px solid #6366f140; border-radius: 100px; font-size: 12px; color: #6366f1; font-weight: 600;">⭐ #2 Images · #1 Game Assets</span>
+          </div>
+        </div>
+        <h1 style="font-family: var(--font-display); font-size: clamp(52px,8vw,88px); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 24px;">
+          <span style="color: var(--text-primary);">Leonardo AI</span>
+        </h1>
+        <p class="model-hero-subtitle">The creative AI platform purpose-built for game developers, concept artists, and digital creators. Leonardo AI excels at consistent character design, game assets, and style-locked image series that other tools struggle with.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+          <a href="compare.html?a=leonardo&b=claude" class="btn-primary" style="padding: 12px 28px; font-size: 15px;">Compare Leonardo →</a>
+          <a href="https://leonardo.ai" target="_blank" rel="noopener" class="btn-secondary" style="padding: 12px 28px; font-size: 15px;">Try Leonardo AI ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="score-ring">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#6366f1" stroke-width="8" stroke-dasharray="439.8" stroke-dashoffset="26" stroke-linecap="round" style="transition: stroke-dashoffset 2s ease;"/>
+          </svg>
+          <div class="score-ring-value">
+            <span class="score-ring-num" data-count="94">0</span>
+            <span class="score-ring-label">OVERALL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model-stats-grid" style="margin-top: 48px;">
+      
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Output Type</div>
+        <div class="model-stat-value" style="color: #6366f1;">Images</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Image Quality</div>
+        <div class="model-stat-value" style="color: #6366f1;">94 / 100</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Game Asset Score</div>
+        <div class="model-stat-value" style="color: #6366f1;">99 / 100</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Free Tier</div>
+        <div class="model-stat-value" style="color: #6366f1;">150 tokens/day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+    <div class="fade-up">
+      <h2 style="font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 8px;">Performance Scores</h2>
+      <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 32px;">Scores across all evaluated categories</p>
+      
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎨 Image Quality</span><span class="progress-bar-value">94</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 94%; background: linear-gradient(90deg, #6366f1, #6366f188);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎮 Game Assets</span><span class="progress-bar-value">99</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 99%; background: linear-gradient(90deg, #6366f1, #6366f188);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎭 Consistency</span><span class="progress-bar-value">96</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 96%; background: linear-gradient(90deg, #6366f1, #6366f188);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">⚡ Speed</span><span class="progress-bar-value">72</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 72%; background: linear-gradient(90deg, #6366f1, #6366f188);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">📝 Prompt Follow</span><span class="progress-bar-value">91</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 91%; background: linear-gradient(90deg, #6366f1, #6366f188);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🆓 Free Tier</span><span class="progress-bar-value">88</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 88%; background: linear-gradient(90deg, #6366f1, #6366f188);"></div></div>
+      </div>
+    </div>
+    <div class="fade-up stagger-2">
+      <div class="sw-card strengths" style="margin-bottom: 20px;">
+        <h3>✅ Strengths</h3>
+        <ul><li>Unmatched game asset and concept art generation</li><li>Style-locked character consistency across images</li><li>Fine-tuning with custom LoRA models</li><li>Generous free tier (150 tokens/day)</li><li>Canvas editor for iterative refinement</li><li>Large model library for different styles</li></ul>
+      </div>
+      <div class="sw-card weaknesses">
+        <h3>⚠️ Weaknesses</h3>
+        <ul><li>Slightly lower pure photorealism vs Midjourney</li><li>Complex UI with steeper learning curve</li><li>Slower than some competitors</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">History</span>
+    <h2 class="section-title">Leonardo AI's Journey</h2>
+  </div>
+  <div class="history-timeline fade-up" style="max-width: 700px; margin: 0 auto;">
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">OCTOBER 2022</div>
+      <div class="timeline-text">Leonardo AI founded in Sydney, Australia. Initially focused on game asset generation for indie developers.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">MARCH 2023</div>
+      <div class="timeline-text">Public beta launches. Goes viral as 'Midjourney but for game devs.' Waitlist reaches 1 million.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">JULY 2023</div>
+      <div class="timeline-text">General access opens. Realtime Canvas and fine-tuning features launch. Raises $31M Series A.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">JANUARY 2024</div>
+      <div class="timeline-text">PhotoReal V2 achieves photorealistic quality. Phoenix model launches as flagship. Image guidance tools expanded.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">JUNE 2024</div>
+      <div class="timeline-text">Phoenix model significantly improves text within images and complex scene composition.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2025–2026</div>
+      <div class="timeline-text">Leonardo Video launches. 3D asset generation (alpha). Partners with major game studios including Ubisoft.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Benchmarks</span>
+    <h2 class="section-title">Benchmark Scores</h2>
+  </div>
+  <div class="benchmark-table-wrap fade-up">
+    <table class="benchmark-table">
+      <thead>
+        <tr><th>Benchmark</th><th>Leonardo AI Score</th><th>Top Competitor</th><th>Rank</th><th>Category</th></tr>
+      </thead>
+      <tbody>
+        
+      <tr>
+        <td>Game Asset Quality</td>
+        <td><span class="score-pill excellent">99.0</span></td>
+        <td>85.0</td>
+        <td>🥇 #1</td>
+        <td>Specialization</td>
+      </tr>
+      <tr>
+        <td>Character Consistency</td>
+        <td><span class="score-pill excellent">96.0</span></td>
+        <td>88.0</td>
+        <td>🥇 #1</td>
+        <td>Consistency</td>
+      </tr>
+      <tr>
+        <td>Human Preference (Art)</td>
+        <td><span class="score-pill excellent">94.0</span></td>
+        <td>98.0</td>
+        <td>🥈 #2</td>
+        <td>Quality</td>
+      </tr>
+      <tr>
+        <td>Style Range</td>
+        <td><span class="score-pill excellent">92.0</span></td>
+        <td>99.0</td>
+        <td>🥈 #2</td>
+        <td>Creativity</td>
+      </tr>
+      <tr>
+        <td>Fine-tuning Quality</td>
+        <td><span class="score-pill excellent">95.0</span></td>
+        <td>80.0</td>
+        <td>🥇 #1</td>
+        <td>Customization</td>
+      </tr>
+      <tr>
+        <td>Free Tier Value</td>
+        <td><span class="score-pill excellent">88.0</span></td>
+        <td>40.0</td>
+        <td>🥇 #1</td>
+        <td>Accessibility</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="text-align: center;">
+  <h2 class="section-title fade-up">Ready to Compare Leonardo AI?</h2>
+  <p class="section-subtitle fade-up" style="margin-bottom: 40px;">See how Leonardo AI stacks up against the competition</p>
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;" class="fade-up">
+    <a href="compare.html?a=leonardo&b=claude" class="btn-primary">Compare Leonardo →</a>
+    <a href="models.html" class="btn-secondary">All Models →</a>
+    <a href="models.html" class="btn-secondary">All Models →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:8px;"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+      <p>The definitive source for AI model rankings, benchmarks, and comparisons.</p>
+    </div>
+    <div class="footer-col"><h4>AI Rankings</h4><ul><li><a href="rankings.html">Overall Rankings</a></li><li><a href="categories.html">All Categories</a></li><li><a href="benchmarks.html">Benchmarks</a></li></ul></div>
+    <div class="footer-col"><h4>Top Models</h4><ul><li><a href="claude.html">Claude</a></li><li><a href="chatgpt.html">ChatGPT</a></li><li><a href="gemini.html">Gemini</a></li><li><a href="models.html">All Models</a></li></ul></div>
+    <div class="footer-col"><h4>Tools</h4><ul><li><a href="compare.html">Compare</a></li><li><a href="about.html">About</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ultimate AI Ranking.</span><span>Rankings updated June 2026</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini — AI Ranking 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .model-accent { color: #4285f4; }
+    .model-glow { background: linear-gradient(135deg, #4285f422, #4285f411); border: 1px solid #4285f444; }
+    .model-page-hero { background: radial-gradient(ellipse at top right, #4285f414 0%, transparent 60%); }
+    .score-ring { position: relative; width: 160px; height: 160px; }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring-value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .score-ring-num { font-family: var(--font-display); font-size: 40px; font-weight: 800; color: #4285f4; display: block; line-height: 1; }
+    .score-ring-label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+    .history-timeline { position: relative; padding-left: 32px; }
+    .history-timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-dot { position: absolute; left: -28px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #4285f4; border: 2px solid var(--bg-primary); }
+    .timeline-year { font-size: 12px; font-weight: 600; color: #4285f4; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .timeline-text { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">✨ Gemini</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+</div>
+<div class="cursor-glow"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="models.html" class="active">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="model-page-hero" style="padding: 140px 40px 80px; position: relative; overflow: hidden;">
+  <div class="glow-orb glow-orb-1" style="background: radial-gradient(circle, #4285f418 0%, transparent 70%);"></div>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <a href="models.html" style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 14px; text-decoration: none; margin-bottom: 40px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">
+      ← Back to All Models
+    </a>
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: start;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+          <div class="model-hero-icon" style="background: linear-gradient(135deg, #4285f433, #4285f455);">✨</div>
+          <div>
+            <div style="font-size: 13px; color: #4285f4; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px;">GOOGLE DEEPMIND</div>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: #4285f418; border: 1px solid #4285f440; border-radius: 100px; font-size: 12px; color: #4285f4; font-weight: 600;">⭐ #1 Writing · #1 Multimodal</span>
+          </div>
+        </div>
+        <h1 style="font-family: var(--font-display); font-size: clamp(52px,8vw,88px); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 24px;">
+          <span style="color: var(--text-primary);">Gemini</span>
+        </h1>
+        <p class="model-hero-subtitle">Google's multimodal AI powerhouse, built on decades of search and language model research. Gemini excels at writing, integrates with the entire Google ecosystem, and leads in real-time web search capabilities.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+          <a href="compare.html?a=gemini&b=claude" class="btn-primary" style="padding: 12px 28px; font-size: 15px;">Gemini vs Claude →</a>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-secondary" style="padding: 12px 28px; font-size: 15px;">Try Gemini ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="score-ring">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#4285f4" stroke-width="8" stroke-dasharray="439.8" stroke-dashoffset="53" stroke-linecap="round" style="transition: stroke-dashoffset 2s ease;"/>
+          </svg>
+          <div class="score-ring-value">
+            <span class="score-ring-num" data-count="88">0</span>
+            <span class="score-ring-label">OVERALL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model-stats-grid" style="margin-top: 48px;">
+      
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Context Window</div>
+        <div class="model-stat-value" style="color: #4285f4;">1M tokens</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Writing Score</div>
+        <div class="model-stat-value" style="color: #4285f4;">94 / 100</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Google Integration</div>
+        <div class="model-stat-value" style="color: #4285f4;">Deep</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Speed Score</div>
+        <div class="model-stat-value" style="color: #4285f4;">90 / 100</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+    <div class="fade-up">
+      <h2 style="font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 8px;">Performance Scores</h2>
+      <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 32px;">Scores across all evaluated categories</p>
+      
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">💻 Coding</span><span class="progress-bar-value">86</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 86%; background: linear-gradient(90deg, #4285f4, #4285f488);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎯 Reasoning</span><span class="progress-bar-value">85</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 85%; background: linear-gradient(90deg, #4285f4, #4285f488);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">✍️ Writing</span><span class="progress-bar-value">94</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 94%; background: linear-gradient(90deg, #4285f4, #4285f488);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🔬 Research</span><span class="progress-bar-value">87</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 87%; background: linear-gradient(90deg, #4285f4, #4285f488);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🔢 Mathematics</span><span class="progress-bar-value">85</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 85%; background: linear-gradient(90deg, #4285f4, #4285f488);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">⚡ Speed</span><span class="progress-bar-value">90</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 90%; background: linear-gradient(90deg, #4285f4, #4285f488);"></div></div>
+      </div>
+    </div>
+    <div class="fade-up stagger-2">
+      <div class="sw-card strengths" style="margin-bottom: 20px;">
+        <h3>✅ Strengths</h3>
+        <ul><li>Best-in-class writing and prose quality</li><li>1 million token context window</li><li>Native Google Search integration</li><li>Strongest multimodal understanding</li><li>Deep Workspace (Docs/Sheets/Gmail) integration</li><li>Fastest among frontier models</li></ul>
+      </div>
+      <div class="sw-card weaknesses">
+        <h3>⚠️ Weaknesses</h3>
+        <ul><li>Coding lags behind Claude and ChatGPT</li><li>Inconsistent reasoning on edge cases</li><li>Privacy concerns with Google data use</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">History</span>
+    <h2 class="section-title">Gemini's Journey</h2>
+  </div>
+  <div class="history-timeline fade-up" style="max-width: 700px; margin: 0 auto;">
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">MAY 2023</div>
+      <div class="timeline-text">Google announces Bard, powered by LaMDA/PaLM 2. Early reviews are lukewarm but Google promises rapid iteration.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">DECEMBER 2023</div>
+      <div class="timeline-text">Gemini unveiled as Google's most capable AI family: Ultra, Pro, and Nano. Debuts with a controversial demo.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">FEBRUARY 2024</div>
+      <div class="timeline-text">Gemini 1.0 Ultra launches. Bard rebranded to Gemini. Scores above human performance on MMLU for the first time.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">MAY 2024</div>
+      <div class="timeline-text">Gemini 1.5 Pro released with 1 million token context — unprecedented. Can analyze entire codebases, movies, and books.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">SEPTEMBER 2024</div>
+      <div class="timeline-text">Gemini 1.5 Flash offers ultra-fast inference at low cost. Deep integration with Google Workspace products.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2025–2026</div>
+      <div class="timeline-text">Gemini 2.0 series launches with enhanced multimodal output, real-time reasoning, and native code execution.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Benchmarks</span>
+    <h2 class="section-title">Benchmark Scores</h2>
+  </div>
+  <div class="benchmark-table-wrap fade-up">
+    <table class="benchmark-table">
+      <thead>
+        <tr><th>Benchmark</th><th>Gemini Score</th><th>Top Competitor</th><th>Rank</th><th>Category</th></tr>
+      </thead>
+      <tbody>
+        
+      <tr>
+        <td>MMLU (Knowledge)</td>
+        <td><span class="score-pill excellent">85.0</span></td>
+        <td>92.0</td>
+        <td>🥉 #3</td>
+        <td>Reasoning</td>
+      </tr>
+      <tr>
+        <td>Writing Arena</td>
+        <td><span class="score-pill excellent">94.0</span></td>
+        <td>91.0</td>
+        <td>🥇 #1</td>
+        <td>Writing</td>
+      </tr>
+      <tr>
+        <td>Multimodal Bench</td>
+        <td><span class="score-pill excellent">91.0</span></td>
+        <td>88.0</td>
+        <td>🥇 #1</td>
+        <td>Multimodal</td>
+      </tr>
+      <tr>
+        <td>HumanEval (Coding)</td>
+        <td><span class="score-pill excellent">86.0</span></td>
+        <td>96.4</td>
+        <td>🥉 #3</td>
+        <td>Coding</td>
+      </tr>
+      <tr>
+        <td>Long Context Recall</td>
+        <td><span class="score-pill excellent">98.0</span></td>
+        <td>95.0</td>
+        <td>🥇 #1</td>
+        <td>Context</td>
+      </tr>
+      <tr>
+        <td>Speed (tokens/sec)</td>
+        <td><span class="score-pill excellent">150</span></td>
+        <td>80</td>
+        <td>🥇 #1</td>
+        <td>Performance</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="text-align: center;">
+  <h2 class="section-title fade-up">Ready to Compare Gemini?</h2>
+  <p class="section-subtitle fade-up" style="margin-bottom: 40px;">See how Gemini stacks up against the competition</p>
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;" class="fade-up">
+    <a href="compare.html?a=gemini&b=claude" class="btn-primary">Gemini vs Claude →</a>
+    <a href="compare.html?a=gemini&b=chatgpt" class="btn-secondary">Gemini vs ChatGPT →</a>
+    <a href="models.html" class="btn-secondary">All Models →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:8px;"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+      <p>The definitive source for AI model rankings, benchmarks, and comparisons.</p>
+    </div>
+    <div class="footer-col"><h4>AI Rankings</h4><ul><li><a href="rankings.html">Overall Rankings</a></li><li><a href="categories.html">All Categories</a></li><li><a href="benchmarks.html">Benchmarks</a></li></ul></div>
+    <div class="footer-col"><h4>Top Models</h4><ul><li><a href="claude.html">Claude</a></li><li><a href="chatgpt.html">ChatGPT</a></li><li><a href="gemini.html">Gemini</a></li><li><a href="models.html">All Models</a></li></ul></div>
+    <div class="footer-col"><h4>Tools</h4><ul><li><a href="compare.html">Compare</a></li><li><a href="about.html">About</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ultimate AI Ranking.</span><span>Rankings updated June 2026</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

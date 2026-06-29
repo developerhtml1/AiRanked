@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT — AI Ranking 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .model-accent { color: #10a37f; }
+    .model-glow { background: linear-gradient(135deg, #10a37f22, #10a37f11); border: 1px solid #10a37f44; }
+    .model-page-hero { background: radial-gradient(ellipse at top right, #10a37f14 0%, transparent 60%); }
+    .score-ring { position: relative; width: 160px; height: 160px; }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring-value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .score-ring-num { font-family: var(--font-display); font-size: 40px; font-weight: 800; color: #10a37f; display: block; line-height: 1; }
+    .score-ring-label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+    .history-timeline { position: relative; padding-left: 32px; }
+    .history-timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-dot { position: absolute; left: -28px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #10a37f; border: 2px solid var(--bg-primary); }
+    .timeline-year { font-size: 12px; font-weight: 600; color: #10a37f; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .timeline-text { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">🤖 ChatGPT</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+</div>
+<div class="cursor-glow"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="models.html" class="active">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="model-page-hero" style="padding: 140px 40px 80px; position: relative; overflow: hidden;">
+  <div class="glow-orb glow-orb-1" style="background: radial-gradient(circle, #10a37f18 0%, transparent 70%);"></div>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <a href="models.html" style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 14px; text-decoration: none; margin-bottom: 40px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">
+      ← Back to All Models
+    </a>
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: start;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+          <div class="model-hero-icon" style="background: linear-gradient(135deg, #10a37f33, #10a37f55);">🤖</div>
+          <div>
+            <div style="font-size: 13px; color: #10a37f; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px;">OPENAI</div>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: #10a37f18; border: 1px solid #10a37f40; border-radius: 100px; font-size: 12px; color: #10a37f; font-weight: 600;">⭐ #2 Overall · #1 Creativity</span>
+          </div>
+        </div>
+        <h1 style="font-family: var(--font-display); font-size: clamp(52px,8vw,88px); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 24px;">
+          <span style="color: var(--text-primary);">ChatGPT</span>
+        </h1>
+        <p class="model-hero-subtitle">The world's most popular AI assistant, created by OpenAI. ChatGPT pioneered the consumer AI revolution and remains the most widely used AI system with over 200 million weekly users.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+          <a href="compare.html?a=chatgpt&b=claude" class="btn-primary" style="padding: 12px 28px; font-size: 15px;">ChatGPT vs Claude →</a>
+          <a href="https://chat.openai.com" target="_blank" rel="noopener" class="btn-secondary" style="padding: 12px 28px; font-size: 15px;">Try ChatGPT ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="score-ring">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#10a37f" stroke-width="8" stroke-dasharray="439.8" stroke-dashoffset="35" stroke-linecap="round" style="transition: stroke-dashoffset 2s ease;"/>
+          </svg>
+          <div class="score-ring-value">
+            <span class="score-ring-num" data-count="92">0</span>
+            <span class="score-ring-label">OVERALL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model-stats-grid" style="margin-top: 48px;">
+      
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Context Window</div>
+        <div class="model-stat-value" style="color: #10a37f;">128K tokens</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Coding Score</div>
+        <div class="model-stat-value" style="color: #10a37f;">92 / 100</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">API Available</div>
+        <div class="model-stat-value" style="color: #10a37f;">Yes</div>
+      </div>
+      <div class="model-stat-card fade-up">
+        <div class="model-stat-label">Creativity Score</div>
+        <div class="model-stat-value" style="color: #10a37f;">95 / 100</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+    <div class="fade-up">
+      <h2 style="font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 8px;">Performance Scores</h2>
+      <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 32px;">Scores across all evaluated categories</p>
+      
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">💻 Coding</span><span class="progress-bar-value">92</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 92%; background: linear-gradient(90deg, #10a37f, #10a37f88);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎯 Reasoning</span><span class="progress-bar-value">90</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 90%; background: linear-gradient(90deg, #10a37f, #10a37f88);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">✍️ Writing</span><span class="progress-bar-value">93</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 93%; background: linear-gradient(90deg, #10a37f, #10a37f88);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🔬 Research</span><span class="progress-bar-value">88</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 88%; background: linear-gradient(90deg, #10a37f, #10a37f88);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🔢 Mathematics</span><span class="progress-bar-value">87</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 87%; background: linear-gradient(90deg, #10a37f, #10a37f88);"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-header"><span class="progress-bar-label">🎭 Creativity</span><span class="progress-bar-value">95</span></div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 95%; background: linear-gradient(90deg, #10a37f, #10a37f88);"></div></div>
+      </div>
+    </div>
+    <div class="fade-up stagger-2">
+      <div class="sw-card strengths" style="margin-bottom: 20px;">
+        <h3>✅ Strengths</h3>
+        <ul><li>Most creative and expressive writing</li><li>Massive plugin & GPT ecosystem</li><li>Excellent image understanding (GPT-4V)</li><li>Consistent coding assistance</li><li>Best natural conversation flow</li><li>DALL-E integration for image gen</li></ul>
+      </div>
+      <div class="sw-card weaknesses">
+        <h3>⚠️ Weaknesses</h3>
+        <ul><li>Hallucinations more common vs Claude</li><li>Safety filters can be overly restrictive</li><li>Slower at complex multi-step code</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">History</span>
+    <h2 class="section-title">ChatGPT's Journey</h2>
+  </div>
+  <div class="history-timeline fade-up" style="max-width: 700px; margin: 0 auto;">
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">NOVEMBER 2022</div>
+      <div class="timeline-text">ChatGPT launches and reaches 1 million users in 5 days — the fastest consumer product ever. The world discovers conversational AI.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">MARCH 2023</div>
+      <div class="timeline-text">GPT-4 releases. Passes bar exams, SATs, and medical licensing exams. Multimodal vision capabilities added.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">MAY 2023</div>
+      <div class="timeline-text">ChatGPT Plugins launch, enabling real-time web browsing, code execution, and third-party app integration.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">NOVEMBER 2023</div>
+      <div class="timeline-text">GPTs (custom AI assistants) launch. Users build 3 million+ custom GPTs within weeks. Sam Altman temporarily ousted then reinstated.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">MAY 2024</div>
+      <div class="timeline-text">GPT-4o (omni) launches with real-time audio, vision, and text in a single model. Voice mode becomes eerily human-like.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2025–2026</div>
+      <div class="timeline-text">o3 and GPT-5 series push reasoning to new heights. ChatGPT reaches 500M+ weekly active users.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">Benchmarks</span>
+    <h2 class="section-title">Benchmark Scores</h2>
+  </div>
+  <div class="benchmark-table-wrap fade-up">
+    <table class="benchmark-table">
+      <thead>
+        <tr><th>Benchmark</th><th>ChatGPT Score</th><th>Top Competitor</th><th>Rank</th><th>Category</th></tr>
+      </thead>
+      <tbody>
+        
+      <tr>
+        <td>HumanEval (Coding)</td>
+        <td><span class="score-pill excellent">92.0</span></td>
+        <td>96.4</td>
+        <td>🥈 #2</td>
+        <td>Coding</td>
+      </tr>
+      <tr>
+        <td>MMLU (Knowledge)</td>
+        <td><span class="score-pill excellent">86.4</span></td>
+        <td>92.0</td>
+        <td>🥈 #2</td>
+        <td>Reasoning</td>
+      </tr>
+      <tr>
+        <td>MATH (Competition)</td>
+        <td><span class="score-pill excellent">93.1</span></td>
+        <td>91.5</td>
+        <td>🥇 #1</td>
+        <td>Mathematics</td>
+      </tr>
+      <tr>
+        <td>Creative Writing Arena</td>
+        <td><span class="score-pill excellent">94.0</span></td>
+        <td>91.0</td>
+        <td>🥇 #1</td>
+        <td>Creativity</td>
+      </tr>
+      <tr>
+        <td>GPQA (Grad Science)</td>
+        <td><span class="score-pill excellent">72.0</span></td>
+        <td>78.0</td>
+        <td>🥈 #2</td>
+        <td>Reasoning</td>
+      </tr>
+      <tr>
+        <td>HellaSwag</td>
+        <td><span class="score-pill excellent">87.5</span></td>
+        <td>88.7</td>
+        <td>🥈 #2</td>
+        <td>Reasoning</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="text-align: center;">
+  <h2 class="section-title fade-up">Ready to Compare ChatGPT?</h2>
+  <p class="section-subtitle fade-up" style="margin-bottom: 40px;">See how ChatGPT stacks up against the competition</p>
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;" class="fade-up">
+    <a href="compare.html?a=chatgpt&b=claude" class="btn-primary">ChatGPT vs Claude →</a>
+    <a href="compare.html?a=chatgpt&b=gemini" class="btn-secondary">ChatGPT vs Gemini →</a>
+    <a href="models.html" class="btn-secondary">All Models →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:8px;"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+      <p>The definitive source for AI model rankings, benchmarks, and comparisons.</p>
+    </div>
+    <div class="footer-col"><h4>AI Rankings</h4><ul><li><a href="rankings.html">Overall Rankings</a></li><li><a href="categories.html">All Categories</a></li><li><a href="benchmarks.html">Benchmarks</a></li></ul></div>
+    <div class="footer-col"><h4>Top Models</h4><ul><li><a href="claude.html">Claude</a></li><li><a href="chatgpt.html">ChatGPT</a></li><li><a href="gemini.html">Gemini</a></li><li><a href="models.html">All Models</a></li></ul></div>
+    <div class="footer-col"><h4>Tools</h4><ul><li><a href="compare.html">Compare</a></li><li><a href="about.html">About</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ultimate AI Ranking.</span><span>Rankings updated June 2026</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories — AI Ranking 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cat-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .cat-section:last-child { border-bottom: none; }
+    .cat-hero-icon { font-size: 56px; display: block; margin-bottom: 16px; }
+    .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-top: 48px; }
+    .cat-rank-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .cat-rank-item { display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 16px; padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; }
+    .cat-rank-item:hover { background: rgba(255,255,255,0.03); }
+    .cat-rank-item:last-child { border-bottom: none; }
+    .cat-rank-pos { font-family: var(--font-display); font-size: 18px; font-weight: 800; text-align: center; }
+    .p1 { color: #FFD700; } .p2 { color: #C0C0C0; } .p3 { color: #CD7F32; } .pn { color: var(--text-muted); }
+    .cat-rank-info { display: flex; align-items: center; gap: 12px; }
+    .cat-rank-emoji { font-size: 24px; }
+    .cat-rank-name { font-weight: 600; font-size: 15px; }
+    .cat-rank-score { font-family: var(--font-mono); font-size: 20px; font-weight: 700; color: var(--accent-blue); }
+    .cat-desc-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; }
+    .cat-desc-box h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+    .cat-desc-box p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
+    .cat-desc-box .btn-primary { font-size: 14px; padding: 10px 22px; }
+    .jump-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .jump-btn { padding: 8px 16px; border-radius: 100px; border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: var(--transition); }
+    .jump-btn:hover { background: rgba(79,143,255,0.12); border-color: var(--accent-blue); color: var(--accent-blue); }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">⬡ Categories</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+</div>
+<div class="cursor-glow"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="categories.html" class="active">Categories</a></li>
+    <li><a href="models.html">AI Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="benchmarks.html">Benchmarks</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="compare.html" class="nav-cta">Compare Now →</a></li>
+  </ul>
+  <div class="nav-mobile-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<section style="padding: 140px 40px 60px; max-width: 1200px; margin: 0 auto;">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">10 Categories</span>
+    <h1 class="section-title">AI Performance by Category</h1>
+    <p class="section-subtitle">Different AI models excel in different domains. Find the right tool for your task.</p>
+  </div>
+
+  <div class="jump-nav fade-up">
+    <a href="#coding" class="jump-btn">💻 Coding</a>
+    <a href="#reasoning" class="jump-btn">🎯 Reasoning</a>
+    <a href="#writing" class="jump-btn">✍️ Writing</a>
+    <a href="#research" class="jump-btn">🔬 Research</a>
+    <a href="#math" class="jump-btn">🔢 Math</a>
+    <a href="#images" class="jump-btn">🖼️ Images</a>
+    <a href="#video" class="jump-btn">🎬 Video</a>
+    <a href="#speed" class="jump-btn">⚡ Speed</a>
+    <a href="#creativity" class="jump-btn">🎭 Creativity</a>
+    <a href="#web-dev" class="jump-btn">🌐 Web Dev</a>
+  </div>
+
+  <!-- CODING -->
+  <div class="cat-section fade-up" id="coding">
+    <span class="cat-hero-icon">💻</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Coding</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Rankings based on HumanEval, SWE-bench, and real-world coding tasks</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">96</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">92</div></a>
+        <a href="deepseek.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🌊</span><span class="cat-rank-name">DeepSeek</span></div><div class="cat-rank-score">88</div></a>
+        <a href="copilot.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">🪟</span><span class="cat-rank-name">Copilot</span></div><div class="cat-rank-score">88</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">86</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Why Coding Matters</h3>
+        <p>Coding benchmarks test an AI's ability to write, debug, and reason about code across multiple programming languages. We test on HumanEval (function completion), SWE-bench (real GitHub bug fixes), and WebDev Arena (UI generation).</p>
+        <p>Claude dominates with its Constitutional AI approach, producing correct and safe code. ChatGPT excels at explanation and multi-language support.</p>
+        <a href="compare.html?a=claude&b=chatgpt" class="btn-primary">Compare Top Coders →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- REASONING -->
+  <div class="cat-section fade-up" id="reasoning">
+    <span class="cat-hero-icon">🎯</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Reasoning</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Multi-step logical reasoning, graduate-level science, and complex problem solving</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">95</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">90</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">85</div></a>
+        <a href="deepseek.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">🌊</span><span class="cat-rank-name">DeepSeek</span></div><div class="cat-rank-score">84</div></a>
+        <a href="grok.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">⚡</span><span class="cat-rank-name">Grok</span></div><div class="cat-rank-score">78</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Benchmarks Used</h3>
+        <p>Reasoning is measured via MMLU (massive multitask language understanding), GPQA (graduate-level science questions), ARC-AGI, and HellaSwag common-sense tests.</p>
+        <p>Claude scores 95/100 — highest in the field — thanks to its extended thinking and chain-of-thought capabilities that map problems systematically.</p>
+        <a href="compare.html?a=claude&b=gemini" class="btn-primary">Compare Reasoners →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WRITING -->
+  <div class="cat-section fade-up" id="writing">
+    <span class="cat-hero-icon">✍️</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Writing & Text Generation</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Long-form writing quality, creativity, voice, and coherence across genres</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">94</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">93</div></a>
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">90</div></a>
+        <a href="grok.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">⚡</span><span class="cat-rank-name">Grok</span></div><div class="cat-rank-score">82</div></a>
+        <a href="perplexity.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">🔍</span><span class="cat-rank-name">Perplexity</span></div><div class="cat-rank-score">78</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>What We Measure</h3>
+        <p>Writing scores come from human evaluators across 20+ genres: blog posts, essays, fiction, poetry, marketing copy, and technical documentation. Models are rated on clarity, creativity, and tone.</p>
+        <p>Gemini leads due to its integration with Google's vast corpus and its natural, engaging writing style across genres.</p>
+        <a href="compare.html?a=gemini&b=chatgpt" class="btn-primary">Compare Writers →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="cat-section fade-up" id="research">
+    <span class="cat-hero-icon">🔬</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Research</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Fact accuracy, source citation, web access, and research depth</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="perplexity.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🔍</span><span class="cat-rank-name">Perplexity</span></div><div class="cat-rank-score">97</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">88</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">87</div></a>
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">85</div></a>
+        <a href="grok.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">⚡</span><span class="cat-rank-name">Grok</span></div><div class="cat-rank-score">80</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Why Perplexity Dominates</h3>
+        <p>Perplexity was built from the ground up as an AI search engine. It cites every claim with live web sources, ensures up-to-date information, and excels at synthesizing complex research topics.</p>
+        <p>Unlike traditional chatbots, Perplexity never hallucinates unsourced facts — making it the gold standard for research tasks.</p>
+        <a href="perplexity.html" class="btn-primary">View Perplexity Profile →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATH -->
+  <div class="cat-section fade-up" id="math">
+    <span class="cat-hero-icon">🔢</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Mathematics</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Competition math, calculus, proofs, and quantitative reasoning</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">94</div></a>
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">91</div></a>
+        <a href="deepseek.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🌊</span><span class="cat-rank-name">DeepSeek</span></div><div class="cat-rank-score">90</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">88</div></a>
+        <a href="grok.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">⚡</span><span class="cat-rank-name">Grok</span></div><div class="cat-rank-score">78</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Math Benchmark Suite</h3>
+        <p>Scored on MATH (competition problems), GSM8K (grade-school math), and olympiad-level proofs. Both numeric accuracy and step-by-step reasoning are evaluated.</p>
+        <p>ChatGPT leads due to its Code Interpreter tool which can verify computations, while Claude and DeepSeek excel at symbolic reasoning.</p>
+        <a href="compare.html?a=chatgpt&b=claude" class="btn-primary">Compare Math Models →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGES -->
+  <div class="cat-section fade-up" id="images">
+    <span class="cat-hero-icon">🖼️</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Image Generation</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Photorealism, artistic style, prompt adherence, and visual quality</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="midjourney.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🎨</span><span class="cat-rank-name">Midjourney</span></div><div class="cat-rank-score">98</div></a>
+        <a href="leonardo.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🖼️</span><span class="cat-rank-name">Leonardo AI</span></div><div class="cat-rank-score">94</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT (DALL-E)</span></div><div class="cat-rank-score">86</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini Imagen</span></div><div class="cat-rank-score">80</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Image Quality Metrics</h3>
+        <p>Image models are rated on FID score (realism), CLIP score (prompt adherence), human preference studies (2,000+ evaluators), and aesthetic quality across 12 style categories.</p>
+        <p>Midjourney consistently wins on aesthetic beauty and artistic coherence. Leonardo AI leads for game asset production and character consistency.</p>
+        <a href="midjourney.html" class="btn-primary">View Midjourney Profile →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="cat-section fade-up" id="video">
+    <span class="cat-hero-icon">🎬</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Video Generation</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Motion quality, temporal coherence, cinematic realism, and text adherence</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="runway.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🎬</span><span class="cat-rank-name">Runway AI</span></div><div class="cat-rank-score">96</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini Video</span></div><div class="cat-rank-score">82</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT/Sora</span></div><div class="cat-rank-score">76</div></a>
+        <a href="metaai.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">🦙</span><span class="cat-rank-name">Meta AI</span></div><div class="cat-rank-score">72</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>The Video AI Frontier</h3>
+        <p>Video generation is the newest and fastest-growing AI category. Models are evaluated on motion smoothness, physics accuracy, cinematic quality, and prompt faithfulness at 4K resolution.</p>
+        <p>Runway AI's Gen-3 leads with unmatched temporal coherence and cinematic motion blur that rivals Hollywood production pipelines.</p>
+        <a href="runway.html" class="btn-primary">View Runway Profile →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPEED -->
+  <div class="cat-section fade-up" id="speed">
+    <span class="cat-hero-icon">⚡</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Speed</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Tokens per second, first-token latency, and real-world response time</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="grok.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">⚡</span><span class="cat-rank-name">Grok</span></div><div class="cat-rank-score">96</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini Flash</span></div><div class="cat-rank-score">90</div></a>
+        <a href="mistral.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🌪️</span><span class="cat-rank-name">Mistral</span></div><div class="cat-rank-score">90</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">82</div></a>
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">78</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Speed vs. Quality Trade-off</h3>
+        <p>Speed is measured in average tokens per second on standard hardware, first-token latency (time to first word), and perceived latency in real user sessions.</p>
+        <p>Grok achieves near-instant responses due to xAI's custom inference infrastructure. Claude trades speed for deeper reasoning quality.</p>
+        <a href="compare.html?a=grok&b=claude" class="btn-primary">Compare Speed vs Quality →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREATIVITY -->
+  <div class="cat-section fade-up" id="creativity">
+    <span class="cat-hero-icon">🎭</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Creativity</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Originality, divergent thinking, storytelling, and novel idea generation</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="midjourney.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🎨</span><span class="cat-rank-name">Midjourney</span></div><div class="cat-rank-score">98</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">95</div></a>
+        <a href="runway.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🎬</span><span class="cat-rank-name">Runway AI</span></div><div class="cat-rank-score">96</div></a>
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">88</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">82</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>Measuring Creative Output</h3>
+        <p>Creativity is the hardest metric to quantify. We use a blend of human creative preference studies, originality scoring (semantic distance from training data), and diversity of output across 1,000 open-ended prompts.</p>
+        <p>Multimodal creative tools (Midjourney, Runway) score highest overall due to their visual creative outputs.</p>
+        <a href="compare.html?a=chatgpt&b=claude" class="btn-primary">Compare Text Creativity →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEB DEV -->
+  <div class="cat-section fade-up" id="web-dev">
+    <span class="cat-hero-icon">🌐</span>
+    <h2 class="section-title" style="margin-bottom:8px;">Website Development</h2>
+    <p style="color:var(--text-secondary);font-size:16px;">Full-stack web generation, UI accuracy, and production-ready code quality</p>
+    <div class="cat-grid">
+      <div class="cat-rank-card">
+        <a href="claude.html" class="cat-rank-item"><div class="cat-rank-pos p1">1</div><div class="cat-rank-info"><span class="cat-rank-emoji">🧠</span><span class="cat-rank-name">Claude</span></div><div class="cat-rank-score">96</div></a>
+        <a href="chatgpt.html" class="cat-rank-item"><div class="cat-rank-pos p2">2</div><div class="cat-rank-info"><span class="cat-rank-emoji">🤖</span><span class="cat-rank-name">ChatGPT</span></div><div class="cat-rank-score">92</div></a>
+        <a href="copilot.html" class="cat-rank-item"><div class="cat-rank-pos p3">3</div><div class="cat-rank-info"><span class="cat-rank-emoji">🪟</span><span class="cat-rank-name">Copilot</span></div><div class="cat-rank-score">88</div></a>
+        <a href="gemini.html" class="cat-rank-item"><div class="cat-rank-pos pn">4</div><div class="cat-rank-info"><span class="cat-rank-emoji">✨</span><span class="cat-rank-name">Gemini</span></div><div class="cat-rank-score">86</div></a>
+        <a href="deepseek.html" class="cat-rank-item"><div class="cat-rank-pos pn">5</div><div class="cat-rank-info"><span class="cat-rank-emoji">🌊</span><span class="cat-rank-name">DeepSeek</span></div><div class="cat-rank-score">84</div></a>
+      </div>
+      <div class="cat-desc-box">
+        <h3>WebDev Arena Benchmark</h3>
+        <p>Tested on WebDev Arena — a real-world benchmark where AI models generate full web pages from natural language descriptions. Human judges evaluate visual accuracy, code quality, and responsiveness.</p>
+        <p>Claude leads with a 96/100 score, producing pixel-accurate, accessible, and production-ready HTML/CSS/JS code.</p>
+        <a href="compare.html?a=claude&b=chatgpt" class="btn-primary">Compare Web Dev →</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:8px;"><div class="nav-logo-icon">⬡</div>AI Ranking</a>
+      <p>The definitive source for AI model rankings and comparisons.</p>
+    </div>
+    <div class="footer-col"><h4>Rankings</h4><ul><li><a href="rankings.html">Overall</a></li><li><a href="categories.html">Categories</a></li><li><a href="benchmarks.html">Benchmarks</a></li></ul></div>
+    <div class="footer-col"><h4>Models</h4><ul><li><a href="models.html">All Models</a></li><li><a href="compare.html">Compare</a></li></ul></div>
+    <div class="footer-col"><h4>Info</h4><ul><li><a href="about.html">About</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ultimate AI Ranking.</span><span>Updated June 2026</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
